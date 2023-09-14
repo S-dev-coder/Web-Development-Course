@@ -26,6 +26,7 @@ function bakePizza(dough) {
     });
 }
 
+// By using async await functions 
 async function orderPizza() {
     try {
         const cheese = await getCheese();
@@ -36,29 +37,34 @@ async function orderPizza() {
 
         const pizza = await bakePizza(dough);
         console.log("here is the pizza", pizza);
-    } catch (err) {
+    }
+     catch (err) {
         console.log("error occured", err);
     }
     console.log("Process ended");
 }
-
 orderPizza();
 
-// getCheese()
-//     .then((cheese) => {
-//         console.log("here is the cheese", cheese);
-//         return makeDough(cheese);
-//     })
-//     .then((dough) => {
-//         console.log("here is the dough", dough);
-//         return bakePizza(dough);
-//     })
-//     .then((pizza) => {
-//         console.log("here is the pizza", pizza);
-//     })
-//     .catch((data) => {
-//         console.log("error occured", data);
-//     })
-//     .finally(() => {
-//         console.log("Process ended");
-//     });
+
+// By using promises to avoid nested call back functions 
+
+getCheese()
+    .then((cheese) => {
+        console.log("here is the cheese", cheese);
+        return makeDough(cheese);
+    })
+    .then((dough) => {
+        console.log("here is the dough", dough);
+        return bakePizza(dough);
+    })
+    .then((pizza) => {
+        console.log("here is the pizza", pizza);
+    })
+    .catch((data) => {
+        console.log("error occured", data);
+    })
+    .finally(() => {
+        console.log("Process ended");
+    });
+
+     
