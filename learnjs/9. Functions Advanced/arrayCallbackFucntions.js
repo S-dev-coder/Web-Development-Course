@@ -8,6 +8,8 @@ const a = [4, 1, 6, -2, -5, 3, 2, -8, 6, 7];
 
 // console.log(result);
 
+
+// call back function
 a.forEach((num, i) => {
     console.log("array num", num, i);
 });
