@@ -1,3 +1,5 @@
+// Synchronous Promises
+
 const ticket = new Promise(function (resolve, reject) {
     const isBoarded = false;
     if (isBoarded) {
