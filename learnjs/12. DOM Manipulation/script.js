@@ -23,7 +23,7 @@ container.appendChild(newParagraph);
 
 
 
-
+// checking here all the doms
 // const myBody = document.body;
 
 // console.log(myBody);
